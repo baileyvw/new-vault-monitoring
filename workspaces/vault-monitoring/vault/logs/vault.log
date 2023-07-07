@@ -1,0 +1,20 @@
+==> Vault server configuration:
+
+             Api Address: http://127.0.0.1:8200
+                     Cgo: disabled
+         Cluster Address: https://127.0.0.1:8201
+   Environment Variables: AWS_ACCESS_KEY_ID, AWS_DEFAULT_REGION, AWS_SECRET_ACCESS_KEY, EDITOR, GODEBUG, HOME, LANG, LC_CTYPE, LESS, LOGNAME, LSCOLORS, NVM_CD_FLAGS, NVM_DIR, PACKER_LOG, PACKER_LOG_PATH, PAGER, PATH, PWD, SHELL, SHLVL, SSH_AUTH_SOCK, TERM, TERM_PROGRAM, TERM_PROGRAM_VERSION, TERM_SESSION_ID, TF_LOG, TF_LOG_PATH, TMPDIR, USER, XPC_FLAGS, XPC_SERVICE_NAME, ZSH, _, __CFBundleIdentifier
+              Go Version: go1.20.5
+              Listener 1: tcp (addr: "0.0.0.0:8200", cluster address: "0.0.0.0:8201", max_request_duration: "1m30s", max_request_size: "33554432", tls: "disabled")
+               Log Level: 
+                   Mlock: supported: false, enabled: false
+           Recovery Mode: false
+                 Storage: file
+                 Version: Vault v1.13.3, built 2023-06-06T18:12:37Z
+             Version Sha: 3bedf816cbf851656ae9e6bd65dd4a67a9ddff5e+CHANGES
+
+==> Vault server started! Log data will stream in below:
+
+2023-06-29T15:53:35.367+0100 [INFO]  proxy environment: http_proxy="" https_proxy="" no_proxy=""
+2023-06-29T15:53:35.373+0100 [INFO]  core: Initializing version history cache for core
+==> Vault shutdown triggered

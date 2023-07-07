@@ -1,0 +1,68 @@
+#!/bin/bash
+
+status=$?
+# changeing to root user
+echo " changeing to root user :${status}"
+sudo -s
+#${status}
+ls -l
+if test $status -eq 0
+then
+   echo "ls files listed :${status}"
+else
+   echo "ls file list failed :${status}"
+fi
+# copy a file 
+#status=$?
+cp test test3
+#echo $? 
+#if test $status -eq 0
+#then
+#   echo "cp copy files listed :${status}"
+#else
+#   echo "cp file copy failed :${status}"
+#fi
+if [ $? -eq 0 ]
+   then
+      echo "cp copied files  "
+else
+      echo "cp file copy failed "
+fi
+#echo " cp command ${status}"
+#echo "$?"
+#  remove apparmor
+echo " remove apparmor package"
+systemctl disable apparmor
+apt-get remove apparmor
+if test $status -eq 0
+then
+   echo "remove files listed 0 :$?}"
+else
+   echo "remove file copy failed 1 :$?"
+fi
+# 
+if apt-get remove apparmor -y; then
+	echo "passed 0"
+else
+	echo "failed again 1"
+fi
+apt-get install selinux -y
+setenforce 0
+#
+echo "wget https://releases.hashicorp.com/vault/1.13.3/vault_1.13.3_linux_amd64.zip"
+apt-get install unzip -y
+apt-get install curl -y
+echo "unzip vault_1.13.3_linux_amd64.zip"
+echo "mv vault /usr/bin"
+#
+echo "sudo apt-get install docker-compose -y"
+echo "sudo docker"
+echo "sudo docker-compose"
+echo "sudo docker ps"
+echo "sudo usermod -aG docker $USER"
+echo "sudo usermod -aG docker vagrant"
+
+echo "docker run hello-world"
+
+#
+echo "git clone https://github.com/samgabrail/vault-monitoring.git"
