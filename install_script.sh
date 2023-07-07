@@ -23,7 +23,7 @@ fi
 #  remove apparmor
 echo " remove apparmor package"
 systemctl disable apparmor
-apt-get remove apparmor
+apt-get remove apparmor -y
 if test $status -eq 0
 then
    echo "remove files listed 0 :$?}"
@@ -85,6 +85,7 @@ else
 fi
 # get vault-monitoring 
 #echo "git clone https://github.com/samgabrail/vault-monitoring.git"
+#echo git clone https://github.com/baileyvw/new-vault-monitoring.git
 #if [ $? -eq 0 ]
 #   then
 #      echo " git clone vault-monitoring"
