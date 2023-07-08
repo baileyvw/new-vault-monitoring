@@ -11,7 +11,8 @@ mkdir -p /workspaces/vault-monitoring/vault/config/
 touch /workspaces/vault-monitoring/vault/logs/vault.log
 cp vault/config/server.hcl /workspaces/vault-monitoring/vault/config/server.hcl
 vault server -config=/workspaces/vault-monitoring/vault/config/server.hcl > /workspaces/vault-monitoring/vault/logs/vault.log 2>&1 &
-export VAULT_ADDR=http://127.0.0.1:8200
+# put the ip address of the hostname for VAULT_ADDR=http://ipaddress-hostname:8200
+#export VAULT_ADDR=http://127.0.0.1:8200
 export LEARN_VAULT=/workspaces/vault-monitoring/vault/
 #mkdir -p /workspaces/vault-monitoring/vault/
 sleep 5
