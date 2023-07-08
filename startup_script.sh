@@ -7,12 +7,13 @@ echo -e "${Gre}✔ Script Started Running, Please be patient, this will take abo
 echo -e "${Gre}✔ Running Vault Initialization and unseal"
 echo -e "${Gre}✔ Logs will show up in the file /workspaces/vault-monitoring/vault/logs/vault.log"
 mkdir -p /workspaces/vault-monitoring/vault/logs/
+mkdir -p /workspaces/vault-monitoring/vault/config/
 touch /workspaces/vault-monitoring/vault/logs/vault.log
 cp vault/config/server.hcl /workspaces/vault-monitoring/vault/config/server.hcl
 vault server -config=/workspaces/vault-monitoring/vault/config/server.hcl > /workspaces/vault-monitoring/vault/logs/vault.log 2>&1 &
 export VAULT_ADDR=http://127.0.0.1:8200
 export LEARN_VAULT=/workspaces/vault-monitoring/vault/
-mkdir -p /workspaces/vault-monitoring/vault/
+#mkdir -p /workspaces/vault-monitoring/vault/
 sleep 5
 vault operator init -key-shares=1 -key-threshold=1 | head -n3 | cat > $LEARN_VAULT/.vault-init
 sleep 10
